@@ -1,101 +1,66 @@
-
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
-const images = [
-  "https://www.citizenwatches.co.in/images/DESK13032025113920.jpg",
-  "https://www.citizenwatches.co.in/images/DESK05072025005329.jpg",
-  "https://www.citizenwatches.co.in/images/DESK13032025114132.jpg",
-  "https://www.citizenwatches.co.in/images/DESK05072025004857.jpg",
-  "https://www.citizenwatches.co.in/images/DESK13032025113810.jpg",
-  "https://www.citizenwatches.co.in/images/DESK13032025113732.jpg",
-];
-
-function hero() {
+const Hero = () => {
   return (
-    <div className="w-full">
-      <div className="relative overflow-x-hidden">
-        <Swiper
-          grabCursor={true}
-          loop={true}
-          centeredSlides={true}
-          slidesPerView={1}
-          spaceBetween={0}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            768: {
-              slidesPerView: 1,
-            },
-            1024: {
-              slidesPerView: 'auto',
-            },
-          }}
-          pagination={{ el: '.swiper-pagination', clickable: true }}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
-          modules={[Pagination, Navigation, Autoplay]}
-          className="mySwiper"
+    <section className="relative min-h-screen bg-black text-white overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-60"
         >
-          {images.map((src, index) => (
-            <SwiperSlide
-              key={index}
-              className="swiper-slide-custom flex justify-center items-center transition-all duration-300"
-            >
-              <img
-                src={src}
-                alt={`slide ${index}`}
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </SwiperSlide>
-          ))}
-
-          {/* Navigation Buttons */}
-          <div className="swiper-button-prev text-white md:bg-black/30 text-3xl absolute left-0 md:p-10 md:left-[10vw] top-1/2 -translate-y-1/2 z-10 cursor-pointer">
-            <ArrowLeft />
-          </div>
-          <div className="swiper-button-next text-white md:bg-black/30 text-3xl absolute right-0 md:p-10 md:right-[10vw] top-1/2 -translate-y-1/2 z-10 cursor-pointer">
-            <ArrowRight />
-          </div>
-
-          {/* Pagination Dots */}
-          <div className="swiper-pagination mt-6 !static text-white" />
-        </Swiper>
+          <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1c9a91a7d&profile_id=139&oauth2_token_id=57447761" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80"></div>
       </div>
 
-      {/* ✅ Custom Styling */}
-      <style>{`
-        @media (min-width: 1024px) {
-  .swiper-slide-custom {
-    width: 70vw !important;
-    height: 70vh;
-    opacity: 0.3;
-    transition: all 0.5s ease;
-  }
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 h-screen flex items-center">
+        <div className="max-w-4xl">
+          <div className="mb-6">
+            <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
+              New Collection
+            </span>
+          </div>
+          
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+            Master
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+              of Time
+            </span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
+            Swiss precision meets masculine elegance. Discover timepieces engineered for the discerning gentleman who accepts nothing less than perfection.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button className="group bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center">
+              <span>Explore Collection</span>
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </button>
+            
+            <button className="group border border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center">
+              <Play className="w-5 h-5 mr-2" />
+              <span>Watch Story</span>
+            </button>
+          </div>
+        </div>
+      </div>
 
-  .swiper-slide-custom.swiper-slide-active {
-    width: 70vw !important;
-    opacity: 1;
-  }
-
-  .swiper-wrapper {
-    justify-content: flex-start !important;
-    padding-left: 0 !important;
-  }
-}
-      `}</style>
-    </div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-bounce"></div>
+        </div>
+      </div>
+    </section>
   );
-}
+};
 
-export default hero;
+export default Hero;

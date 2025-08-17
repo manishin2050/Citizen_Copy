@@ -1,88 +1,97 @@
 import React from 'react';
-import { Star, Heart } from 'lucide-react';
+import { Star, Heart, ShoppingBag } from 'lucide-react';
 
 const FeaturedProducts = () => {
   const products = [
     {
       id: 1,
-      name: 'Eco-Drive Chronograph',
-      price: '₹24,995',
-      originalPrice: '₹29,995',
-      image:'https://www.citizenwatches.co.in/public/images/a68a9e5e178aa268b9ca1c160d4d8cb1.jpg',
-      rating: 4.8,
+      name: 'Titanium Chronograph Pro',
+      price: '$2,899',
+      originalPrice: '$3,299',
+      image: 'https://images.pexels.com/photos/1697214/pexels-photo-1697214.jpeg?auto=compress&cs=tinysrgb&w=600',
+      rating: 4.9,
       isNew: true,
-      discount: '17% OFF'
+      discount: '12% OFF',
+      features: ['Titanium Case', 'Sapphire Crystal', 'Water Resistant 300m']
     },
     {
       id: 2,
-      name: 'Promaster Diver',
-      price: '₹18,995',
-      originalPrice: '₹22,995',
-      image:'https://www.citizenwatches.co.in/public/images/Homimg31122024071722.jpg',
-      rating: 4.9,
+      name: 'Professional Diver GMT',
+      price: '$2,199',
+      originalPrice: '$2,599',
+      image: 'https://images.pexels.com/photos/1034063/pexels-photo-1034063.jpeg?auto=compress&cs=tinysrgb&w=600',
+      rating: 4.8,
       isNew: false,
-      discount: '17% OFF'
+      discount: '15% OFF',
+      features: ['GMT Function', 'Ceramic Bezel', 'Automatic Movement']
     },
     {
       id: 3,
-      name: 'Satellite Wave GPS',
-      price: '₹45,995',
-      originalPrice: '₹52,995',
-      image:'https://www.citizenwatches.co.in/public/images/Homimg03112021071259.jpg',
-      rating: 4.7,
+      name: 'Aviation Master Pilot',
+      price: '$3,499',
+      originalPrice: '$3,999',
+      image: 'https://images.pexels.com/photos/1697216/pexels-photo-1697216.jpeg?auto=compress&cs=tinysrgb&w=600',
+      rating: 4.9,
       isNew: true,
-      discount: '13% OFF'
+      discount: '13% OFF',
+      features: ['Pilot Complications', 'Anti-Magnetic', 'Leather Strap']
     },
     {
       id: 4,
-      name: 'Elegant Dress Watch',
-      price: '₹12,995',
-      originalPrice: '₹15,995',
-      image:'https://www.citizenwatches.co.in/public/images/f67b655b038f0a7e2783336e2761e20a.jpg',
-      rating: 4.6,
+      name: 'Classic Dress Elite',
+      price: '$1,799',
+      originalPrice: '$2,199',
+      image: 'https://images.pexels.com/photos/1697215/pexels-photo-1697215.jpeg?auto=compress&cs=tinysrgb&w=600',
+      rating: 4.7,
       isNew: false,
-      discount: '19% OFF'
+      discount: '18% OFF',
+      features: ['Ultra-Thin', 'Gold Plated', 'Swiss Movement']
     }
   ];
 
   return (
-    <section className="py-16 md:px-20 bg-gray-0">
+    <section className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">Featured Collection</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover our most popular timepieces, crafted with precision and powered by innovative technology
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            Featured
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-white">
+              Collection
+            </span>
+          </h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            Handpicked timepieces that represent the pinnacle of horological craftsmanship and masculine design.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 mx-4  sm:mx-0 md:px-16 md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
-            <div key={product.id} className="bg-gray-200  text-gray-900 rounded-lg shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+            <div key={product.id} className="group bg-black rounded-2xl overflow-hidden hover:bg-gray-800 transition-all duration-500 border border-gray-800">
               <div className="relative overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute top-4 left-4 flex flex-col gap-2">
                   {product.isNew && (
-                    <span className="bg-black text-center text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    <span className="bg-white text-black px-3 py-1 rounded-full text-xs font-bold">
                       NEW
                     </span>
                   )}
-                  <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                  <span className="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-bold">
                     {product.discount}
                   </span>
                 </div>
-                <button className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-colors">
-                  <Heart className="w-4 h-4 text-gray-600" />
+                <button className="absolute top-4 right-4 p-2 bg-black/50 backdrop-blur-sm rounded-full hover:bg-black/70 transition-colors">
+                  <Heart className="w-4 h-4 text-white" />
                 </button>
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-semibold  mb-2">{product.name}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{product.name}</h3>
                 
-                <div className="flex items-center mb-3">
+                <div className="flex items-center mb-4">
                   <div className="flex items-center">
                     {[...Array(5)].map((_, i) => (
                       <Star
@@ -90,32 +99,41 @@ const FeaturedProducts = () => {
                         className={`w-4 h-4 ${
                           i < Math.floor(product.rating)
                             ? 'text-yellow-400 fill-current'
-                            : 'text-gray-300'
+                            : 'text-gray-600'
                         }`}
                       />
                     ))}
                   </div>
-                  <span className="ml-2 text-sm text-gray-0">({product.rating})</span>
+                  <span className="ml-2 text-sm text-gray-400">({product.rating})</span>
+                </div>
+
+                <div className="mb-4">
+                  {product.features.map((feature, idx) => (
+                    <span key={idx} className="inline-block bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded mr-2 mb-2">
+                      {feature}
+                    </span>
+                  ))}
                 </div>
                 
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center space-x-2">
-                    <span className="text-sm font-bold ">{product.price}</span>
-                    <span className="text-xs text-gray-700 line-through">{product.originalPrice}</span>
+                    <span className="text-2xl font-bold text-white">{product.price}</span>
+                    <span className="text-sm text-gray-500 line-through">{product.originalPrice}</span>
                   </div>
                 </div>
                 
-                <button className="w-full  border-2 rounded-full border-black text-black py-3  font-semibold hover:bg-gray-900 hover:text-white transition-colors duration-300">
-                  ADD TO CART
+                <button className="w-full bg-white text-black py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center">
+                  <ShoppingBag className="w-4 h-4 mr-2" />
+                  <span>Add to Cart</span>
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <button className="bg-white border-2 border-black text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-900 hover:text-white transition-all duration-300">
-            VIEW ALL PRODUCTS
+        <div className="text-center mt-16">
+          <button className="bg-transparent border-2 border-white text-white px-12 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300">
+            View All Timepieces
           </button>
         </div>
       </div>

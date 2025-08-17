@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const Footer = () => {
   const footerSections = [
@@ -35,15 +35,13 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              <img 
-                src="https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=100&h=50&fit=crop" 
-                alt="Citizen" 
-                className="h-8 w-auto"
-              />
-              <span className="ml-2 text-2xl font-bold">CITIZEN</span>
+              <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center mr-3">
+                <Clock className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-2xl font-bold">CHRONOS</span>
             </div>
             <p className="text-gray-900 mb-6 leading-relaxed">
-              Since 1918, Citizen has been dedicated to making timepieces that are accessible to all. 
+              Since 1918, CHRONOS has been dedicated to creating exceptional timepieces for discerning gentlemen. 
               Our commitment to precision, innovation, and sustainability drives everything we do.
             </p>
             
@@ -88,7 +86,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
               <p className="text-gray-0 text-sm">
-                © 2024 Citizen Watch Co., Ltd. All rights reserved.
+                © 2024 CHRONOS Watch Co., Ltd. All rights reserved.
               </p>
               <div className="flex space-x-6 text-sm">
                 <a href="#" className="text-gray-400 hover:text-black transition-colors">Privacy Policy</a>

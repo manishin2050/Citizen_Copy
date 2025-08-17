@@ -4,98 +4,104 @@ import { ArrowRight } from 'lucide-react';
 const WatchLineup = () => {
   const watchCollections = [
     {
-      name: 'SATELLITE WAVE GPS',
-      tagline: 'The precise time. Anywhere in the world.',
-      image:'https://www.citizenwatches.co.in/storage/Series/July2024/CollImage18072024114515.jpg',
-      background: 'from-green-900 to-green-700'
+      name: 'PROFESSIONAL',
+      tagline: 'Built for Performance',
+      description: 'Precision instruments for the demanding professional',
+      image: 'https://images.pexels.com/photos/1697214/pexels-photo-1697214.jpeg?auto=compress&cs=tinysrgb&w=800',
+      price: 'From $2,499'
     },
     {
-      name: 'Series 8',
-      tagline: 'Expect the infinite',
-      image:'https://www.citizenwatches.co.in/storage/Series/February2025/CollImage17022025103604.jpg',
-      background: 'from-blue-900 to-blue-700'
+      name: 'SPORT',
+      tagline: 'Engineered for Action',
+      description: 'Rugged timepieces for active lifestyles',
+      image: 'https://images.pexels.com/photos/1034063/pexels-photo-1034063.jpeg?auto=compress&cs=tinysrgb&w=800',
+      price: 'From $1,899'
     },
     {
-      name: 'Zenshin',
-      tagline: 'SUPER TITANIUM',
-      image:'https://www.citizenwatches.co.in/storage/Series/July2025/CollImage05072025005104.jpg',
-      background: 'from-gray-900 to-gray-700'
+      name: 'CLASSIC',
+      tagline: 'Timeless Elegance',
+      description: 'Sophisticated designs for every occasion',
+      image: 'https://images.pexels.com/photos/1697215/pexels-photo-1697215.jpeg?auto=compress&cs=tinysrgb&w=800',
+      price: 'From $1,299'
     },
     {
-      name: 'PROMASTER',
-      tagline: 'Go Further',
-      subtitle: 'Dive Watch Radio-Controlled',
-      image:'https://www.citizenwatches.co.in/storage/Series/February2025/CollImage21022025021844.jpg',
-      background: 'from-blue-600 to-blue-800'
+      name: 'AVIATION',
+      tagline: 'Sky-High Precision',
+      description: 'Pilot watches with advanced complications',
+      image: 'https://images.pexels.com/photos/1697216/pexels-photo-1697216.jpeg?auto=compress&cs=tinysrgb&w=800',
+      price: 'From $3,299'
     },
     {
-      name: 'CITIZEN L',
-      tagline: 'LIGHT YOUR SPIRIT',
-      image:'https://www.citizenwatches.co.in/storage/Series/February2025/CollImage17022025103506.jpg',
-      background: 'from-pink-600 to-orange-500'
+      name: 'DIVING',
+      tagline: 'Ocean Depths',
+      description: 'Professional dive watches built to last',
+      image: 'https://images.pexels.com/photos/1697217/pexels-photo-1697217.jpeg?auto=compress&cs=tinysrgb&w=800',
+      price: 'From $1,799'
     },
     {
-      name: 'Eco-Drive',
-      tagline: 'Make your move',
-      image:'https://www.citizenwatches.co.in/storage/Series/July2025/CollImage05072025005140.jpg',
-      background: 'from-yellow-600 to-orange-600'
-    },
-    {
-      name: 'Mechanical',
-      tagline: 'TSUYOSA',
-      image:'https://www.citizenwatches.co.in/storage/Series/February2025/CollImage17022025103549.jpg',
-      background: 'from-blue-800 to-purple-800'
-    },
-    {
-      name: 'QUARTZ',
-      tagline: "IT'S TIME FOR THE NEXT",
-      subtitle: 'HYPERION',
-      image:'https://www.citizenwatches.co.in/storage/Series/July2024/CollImage19072024102521.jpg',
-      background: 'from-teal-600 to-green-600'
+      name: 'LIMITED',
+      tagline: 'Exclusive Edition',
+      description: 'Rare timepieces for collectors',
+      image: 'https://images.pexels.com/photos/1697218/pexels-photo-1697218.jpeg?auto=compress&cs=tinysrgb&w=800',
+      price: 'From $4,999'
     }
   ];
 
   return (
-    <section className="py-16 md:px-20 bg-gray-100">
+    <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="md:text-5xl text-4xl font-bold   p-2 rounded-lg text-black/70  mb-4" style={{
-            fontFamily: 'Uncut Sans, sans-serif',
-          }} ><span className='text-gray-900 p-1  px-3  bg-white rounded-lg md:text-6xl  shadow-lg'>WATCH</span> Lineup</h2>
-          <div className="w-16 h-1 bg-gray-400 mx-auto"></div>
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-7xl font-bold text-white mb-6">
+            Master
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-white">
+              pieces
+            </span>
+          </h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            Each collection represents decades of horological expertise, designed for men who appreciate precision and style.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-  {watchCollections.map((collection, index) => (
-    <div
-      key={index}
-      className="relative bg-white hover:bg-gray-200 p-2 overflow-hidden rounded-lg shadow-sm hover:shadow-lg group cursor-pointer 
-                 transform transition duration-500 ease-in-out 
-                  "
-      
-    >
-      {/* Overlay content */}
-      <div style={{
-        backgroundImage: `url('${collection.image}')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }} className="relative h-48 w-full rounded-lg"></div>
-      <div className="z-10 p-6 ">
-          <h3 className="text-xl font-bold mb-2 transition-colors">
-            {collection.name}
-          </h3>
-        <div className="flex items-center justify-between">
-          <div className="text-xm">CITIZEN</div>
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {watchCollections.map((collection, index) => (
+            <div
+              key={index}
+              className="group relative bg-gray-900 rounded-2xl overflow-hidden hover:bg-gray-800 transition-all duration-500 cursor-pointer"
+            >
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src={collection.image}
+                  alt={collection.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+              
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm font-medium text-gray-400 tracking-wider">
+                    {collection.tagline}
+                  </span>
+                  <span className="text-sm font-bold text-white">
+                    {collection.price}
+                  </span>
+                </div>
+                
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  {collection.name}
+                </h3>
+                
+                <p className="text-gray-400 mb-6">
+                  {collection.description}
+                </p>
+                
+                <button className="flex items-center text-white font-medium group-hover:text-gray-300 transition-colors">
+                  <span>Explore Collection</span>
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-
-      {/* Optional: Hover overlay */}
-      {/* <div className="absolute inset-0 bg-gray-300 bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}
-    </div>
-  ))}
-</div>
-
       </div>
     </section>
   );
